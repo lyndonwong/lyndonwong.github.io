@@ -50,6 +50,29 @@
             max-width: 600px;
             margin: 20px 0;
         }
+
+        .full-width-image {
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            background-image: url('/docs/assets/images/san-gregorio-state-beach_NYE_2016_1200x675.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Creates a parallax effect */
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Zoom and pan effect */
+        @media (prefers-reduced-motion: no-preference) {
+            .full-width-image {
+                will-change: transform;
+            }
+
+            body:hover .full-width-image {
+                transform: scale(1.05) translateY(-5px);
+            }
+        }
+
+
     </style>
 </head>
 <body>
@@ -63,10 +86,13 @@
             <a href="https://www.instagram.com/lyndonian/" target="_blank">Instagram</a>
             <a href="https://linkedin.com/in/lyndonwong" target="_blank">LinkedIn</a>
         </div>
-            <img src="/docs/assets/images/san-gregorio-state-beach_2016-12-31.jpg">
+            
     
 <!--        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnQ2dWY4eWJicmJrOTM2cGlvNDllbTQzZXR4dDhkajRiazZsMTc1dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VxbP9tLeKzazm/giphy.gif" alt="count down" class="giphy">
 -->
+
     </div>
+    <div class="full-width-image"></div>
+
 </body>
 </html>
