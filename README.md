@@ -1,4 +1,4 @@
 # lyndonwong.github.io
 My static html sandbox
-<h1>Placeholder Title</h1>
-<p>followed by some placeholder text</p>
+<h1>Curiosity</h1>
+<p>the start of every voluntary journey</p>
