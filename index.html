@@ -93,6 +93,16 @@
 
     </div>
     <div class="full-width-image"></div>
+    
+    <script>
+        document.addEventListener("scroll", function () {
+    let scrollPosition = window.scrollY;
+    let image = document.querySelector(".full-width-image");
+    let scaleAmount = 1 + scrollPosition * 0.0005; // Adjust zoom intensity
+    let translateY = scrollPosition * 0.1; // Adjust pan speed
+    image.style.transform = `scale(${scaleAmount}) translateY(${translateY}px)`;
+});
 
+    </script>
 </body>
 </html>
