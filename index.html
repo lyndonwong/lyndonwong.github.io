@@ -83,8 +83,8 @@
     let ticking = false;
 
     function updateImageTransform() {
-        const scaleAmount = 1 + latestScrollY * 0.005; // Controls zoom intensity
-        const translateY = latestScrollY * 0.2; // Controls pan amount
+        const scaleAmount = 1 + latestScrollY * 0.0005; // Controls zoom intensity
+        const translateY = latestScrollY * 0.1; // Controls pan amount
         image.style.transform = `scale(${scaleAmount}) translateY(${translateY}px)`;
         ticking = false;
     }
