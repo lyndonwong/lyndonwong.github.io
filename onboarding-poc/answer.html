@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lyndon Wong - Onboarding POC</title>
+    <title>Personalized Onboarding POC</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -56,7 +56,23 @@
     </script>
     <div class="container">
         <h1>Onboarding POC</h1>
-        <p><embed src="gpt-answer.txt" type="text/plain" width="400" height=300></embed>
+        <p><embed src="gpt-answer.txt" type="text/plain" width="400" height=300></embed></p>
+
+        <!-- bring in external text via javascript -->
+        <p>
+            <script>
+              fetch('get-answer.txt') // Replace 'your_text_file.txt' with the actual path to your file
+                .then(response => response.text())
+                .then(data => {
+                  document.getElementById('textContainer').textContent = data;
+                })
+                .catch(error => {
+                  console.error('Error loading text file:', error);
+                  document.getElementById('textContainer').textContent = 'Error loading content.';
+                });
+            </script>
+            
+        </p>
         <p>Lyndon tinkering here on github pages. Connect with me below.</p>
         
         <div class="social-links">
