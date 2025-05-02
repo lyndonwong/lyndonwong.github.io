@@ -56,13 +56,10 @@
     </script>
     <div class="container">
         <h1>Onboarding POC</h1>
-        <!--
-        <p><embed src="gpt-answer.txt" type="text/plain" width="400" height=300></embed></p>
-        -->
-        <!-- bring in external text via javascript -->
+        
         <div id="content-container1"></div>
         <script>
-          fetch('gpt-answer.txt') // Replace 'your_text_file.txt' with the actual path to your file
+          fetch('gpt-recommended-categories.txt') // Replace 'your_text_file.txt' with the actual path to your file
             .then(response => response.text())
             .then(data => {
               document.getElementById('content-container1').textContent = data;
