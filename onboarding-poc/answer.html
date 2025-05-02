@@ -88,31 +88,31 @@
         <br>
         <div id="content-container3"></div>
         <script>
-            const contentContainer = document.getElementById('content-container3');
+            const contentContainer3 = document.getElementById('content-container3');
 
             fetch('gpt-deal-alerts.txt')
                 .then(response => response.text())
                 .then(data => {
-                    contentContainer.innerHTML = data;
+                    contentContainer3.innerHTML = data;
                 })
                 .catch(error => {
                 console.error('Error loading text file:', error);
-                contentContainer.textContent = 'Error loading content.';
+                contentContainer3.textContent = 'Error loading content.';
             });
         </script>
         <br>
         <div id="content-container4"></div>
         <script>
-            const contentContainer = document.getElementById('content-container4');
+            const contentContainer4 = document.getElementById('content-container4');
 
             fetch('gpt-forums.txt')
                 .then(response => response.text())
                 .then(data => {
-                    contentContainer.innerHTML = data;
+                    contentContainer4.innerHTML = data;
                 })
                 .catch(error => {
                 console.error('Error loading text file:', error);
-                contentContainer.textContent = 'Error loading content.';
+                contentContainer4.textContent = 'Error loading content.';
             });
         </script>
         <br>        
