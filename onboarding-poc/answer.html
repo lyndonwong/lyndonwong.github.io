@@ -85,6 +85,19 @@
               document.getElementById('content-container2').textContent = 'Error loading content.';
             });
         </script>
+
+        <div id="content-container3"></div>
+        <script>
+          fetch('gpt-deal-alerts.txt') // Replace 'your_text_file.txt' with the actual path to your file
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('content-container3').textContent = data;
+            })
+            .catch(error => {
+              console.error('Error loading text file:', error);
+              document.getElementById('content-container2').textContent = 'Error loading content.';
+            });
+        </script>
             
         <!-- bring in external text within structured markup -->
 
