@@ -60,16 +60,29 @@
         <p><embed src="gpt-answer.txt" type="text/plain" width="400" height=300></embed></p>
         -->
         <!-- bring in external text via javascript -->
-        <div id="content-container"></div>
+        <div id="content-container1"></div>
         <script>
           fetch('gpt-answer.txt') // Replace 'your_text_file.txt' with the actual path to your file
             .then(response => response.text())
             .then(data => {
-              document.getElementById('content-container').textContent = data;
+              document.getElementById('content-container1').textContent = data;
             })
             .catch(error => {
               console.error('Error loading text file:', error);
-              document.getElementById('content-container').textContent = 'Error loading content.';
+              document.getElementById('content-container1').textContent = 'Error loading content.';
+            });
+        </script>
+
+        <div id="content-container2"></div>
+        <script>
+          fetch('gpt-overview.txt') // Replace 'your_text_file.txt' with the actual path to your file
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('content-container2').textContent = data;
+            })
+            .catch(error => {
+              console.error('Error loading text file:', error);
+              document.getElementById('content-container2').textContent = 'Error loading content.';
             });
         </script>
             
