@@ -62,7 +62,7 @@
         <!-- bring in external text via javascript -->
         <div id="content-container"></div>
         <script>
-          fetch('get-answer.txt') // Replace 'your_text_file.txt' with the actual path to your file
+          fetch('gpt-answer.txt') // Replace 'your_text_file.txt' with the actual path to your file
             .then(response => response.text())
             .then(data => {
               document.getElementById('content-container').textContent = data;
