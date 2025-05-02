@@ -72,7 +72,7 @@
               document.getElementById('content-container1').textContent = 'Error loading content.';
             });
         </script>
-
+        <br>
         <div id="content-container2"></div>
         <script>
           fetch('gpt-overview.txt') // Replace 'your_text_file.txt' with the actual path to your file
@@ -85,7 +85,7 @@
               document.getElementById('content-container2').textContent = 'Error loading content.';
             });
         </script>
-
+        <br>
         <div id="content-container3"></div>
         <script>
             const contentContainer = document.getElementById('content-container3');
@@ -100,9 +100,25 @@
                 contentContainer.textContent = 'Error loading content.';
             });
         </script>
-            
+        <br>
+        <div id="content-container4"></div>
+        <script>
+            const contentContainer = document.getElementById('content-container4');
+
+            fetch('gpt-forums.txt')
+                .then(response => response.text())
+                .then(data => {
+                    contentContainer.innerHTML = data;
+                })
+                .catch(error => {
+                console.error('Error loading text file:', error);
+                contentContainer.textContent = 'Error loading content.';
+            });
+        </script>
+        <br>        
         <!-- bring in external text within structured markup -->
 
+        <hr>
         <p>Lyndon tinkering here on github pages. Connect with me below.</p>
         
         <div class="social-links">
