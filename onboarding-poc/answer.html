@@ -60,23 +60,20 @@
         <p><embed src="gpt-answer.txt" type="text/plain" width="400" height=300></embed></p>
         -->
         <!-- bring in external text via javascript -->
-        <p>
-            <script>
-              fetch('get-answer.txt') // Replace 'your_text_file.txt' with the actual path to your file
-                .then(response => response.text())
-                .then(data => {
-                  document.getElementById('textContainer').textContent = data;
-                })
-                .catch(error => {
-                  console.error('Error loading text file:', error);
-                  document.getElementById('textContainer').textContent = 'Error loading content.';
-                });
-            </script>
+        <div id="content-container"></div>
+        <script>
+          fetch('get-answer.txt') // Replace 'your_text_file.txt' with the actual path to your file
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('content-container').textContent = data;
+            })
+            .catch(error => {
+              console.error('Error loading text file:', error);
+              document.getElementById('content-container').textContent = 'Error loading content.';
+            });
+        </script>
             
-        </p>
         <!-- bring in external text within structured markup -->
-
-
 
         <p>Lyndon tinkering here on github pages. Connect with me below.</p>
         
