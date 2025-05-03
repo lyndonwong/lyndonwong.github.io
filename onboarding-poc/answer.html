@@ -57,19 +57,6 @@
     <div class="container">
         <h1>Onboarding POC</h1>
         
-        <div id="content-container1"></div>
-        <script>
-          fetch('gpt-recommended-categories.txt') // Replace 'your_text_file.txt' with the actual path to your file
-            .then(response => response.text())
-            .then(data => {
-              document.getElementById('content-container1').textContent = data;
-            })
-            .catch(error => {
-              console.error('Error loading text file:', error);
-              document.getElementById('content-container1').textContent = 'Error loading content.';
-            });
-        </script>
-        <br>
         <div id="content-container2"></div>
         <script>
           fetch('gpt-overview.txt') // Replace 'your_text_file.txt' with the actual path to your file
@@ -83,6 +70,21 @@
             });
         </script>
         <br>
+        <div id="content-container1"></div>
+        <script>
+            const contentContainer1 = document.getElementById('content-container1');
+
+            fetch('gpt-recommended-categories.txt')
+                .then(response => response.text())
+                .then(data => {
+                    contentContainer1.innerHTML = data;
+                })
+                .catch(error => {
+                console.error('Error loading text file:', error);
+                contentContainer1.textContent = 'Error loading content.';
+            });
+        </script>
+        <br>        
         <div id="content-container3"></div>
         <script>
             const contentContainer3 = document.getElementById('content-container3');
