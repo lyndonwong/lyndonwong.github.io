@@ -1,1 +1,5 @@
-GPT response will overwrite this
+<a href="https://slickdeals.net/deals/apple/" target="_blank">Apple</a><br>
+<a href="https://slickdeals.net/deals/mens/" target="_blank">Men's Clothing & Accessories</a><br>
+<a href="https://slickdeals.net/deals/tech/" target="_blank">Tech & Electronics</a><br>
+<a href="https://slickdeals.net/deals/smart-watch/" target="_blank">Smart Watches & Wearables</a><br>
+<a href="https://slickdeals.net/deals/tickets/" target="_blank">Tickets & Admission</a><br>
