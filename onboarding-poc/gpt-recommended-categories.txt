@@ -1,7 +1,7 @@
-<a href="https://slickdeals.net/deals/photo/" target="_blank">Cameras</a><br>
-<a href="https://slickdeals.net/deals/camera-accessories/" target="_blank">Camera Accessories</a><br>
-<a href="https://slickdeals.net/deals/software/" target="_blank">Software</a><br>
-<a href="https://slickdeals.net/laptop-deals/" target="_blank">Laptops</a><br>
-<a href="https://slickdeals.net/deals/textbooks/" target="_blank">Textbooks</a><br>
-<a href="https://slickdeals.net/deals/meal-prep-food-containers/" target="_blank">Meal Prep & Food Containers</a><br>
-<a href="https://slickdeals.net/deals/streaming-services/" target="_blank">Streaming Services</a><br>
+<a href="https://slickdeals.net/deals/womens-activewear/" target="_blank">Women's Activewear</a><br>
+<a href="https://slickdeals.net/deals/sport/" target="_blank">Sporting Goods</a><br>
+<a href="https://slickdeals.net/deals/baking/" target="_blank">Baking and Cooking</a><br>
+<a href="https://slickdeals.net/deals/kitchenware/" target="_blank">Kitchenware & Cookware</a><br>
+<a href="https://slickdeals.net/deals/womens/" target="_blank">Women's Clothing & Accessories</a><br>
+<a href="https://slickdeals.net/deals/dating-services/" target="_blank">Dating Services</a><br>
+<a href="https://slickdeals.net/deals/shoes/" target="_blank">Shoes</a><br>
