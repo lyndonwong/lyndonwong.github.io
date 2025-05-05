@@ -58,7 +58,20 @@
     <div class="full-width-image"></div>
     <div class="container">
         <h1>Onboarding POC</h1>
-        
+
+        <div id="content-container5"></div>
+        <script>
+          fetch('gpt-welcome.txt') // Replace 'your_text_file.txt' with the actual path to your file
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('content-container5').textContent = data;
+            })
+            .catch(error => {
+              console.error('Error loading text file:', error);
+              document.getElementById('content-container5').textContent = 'Error loading content.';
+            });
+        </script>
+        <br>
         <div id="content-container2"></div>
         <script>
           fetch('gpt-overview.txt') // Replace 'your_text_file.txt' with the actual path to your file
