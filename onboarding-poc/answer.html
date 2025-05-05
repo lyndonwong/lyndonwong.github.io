@@ -36,6 +36,13 @@
             background-size: cover;
             background-position: center;
         }
+
+        .interest-container {
+            margin: 20px 0;
+            width: 100%;
+            background-color: #f2f2f2;
+
+        }
         
         .social-links {
             margin: 20px 0;
@@ -58,10 +65,10 @@
     <div class="full-width-image"></div>
     <div class="container">
         <h1>Onboarding POC</h1>
-
-        <div id="content-container5"></div>
+        <p>We love your vibe!</p>
+        <div id="content-container5" class="interest-container"></div>
         <script>
-          fetch('gpt-welcome.txt') // Replace 'your_text_file.txt' with the actual path to your file
+          fetch('gpt-interests.txt') // Replace 'your_text_file.txt' with the actual path to your file
             .then(response => response.text())
             .then(data => {
               document.getElementById('content-container5').textContent = data;
