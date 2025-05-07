@@ -138,7 +138,37 @@
                 contentContainer4.textContent = 'Error loading content.';
             });
         </script>
-        <br>        
+        <br>
+        <p>By the way, to protect your anonymity in Slickdeals community forums and our communications, we are happy to refer to you by an assumed name. You can set your own, or let us suggest one based on what you've shared about your interests.</p>
+        <div id="content-container6"></div>
+        <script>
+          fetch('gpt-perceptions.txt') // Replace 'your_text_file.txt' with the actual path to your file
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('content-container6').textContent = data;
+            })
+            .catch(error => {
+              console.error('Error loading text file:', error);
+              document.getElementById('content-container6').textContent = 'Error loading content.';
+            });
+        </script>
+        <br>
+        <p>Based on my perceptions, I'd like to dub you:</p>
+        <div id="content-container7"></div>
+        <script>
+          fetch('gpt-pseudonym.txt') // Replace 'your_text_file.txt' with the actual path to your file
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('content-container7').textContent = data;
+            })
+            .catch(error => {
+              console.error('Error loading text file:', error);
+              document.getElementById('content-container7').textContent = 'Error loading content.';
+            });
+        </script>
+        <br>
+        <p>If you like it, awesome! Otherwise, you are very welcome to change it <a href="">HERE</a>. 
+
         <!-- bring in external text within structured markup -->
 
         <hr>
