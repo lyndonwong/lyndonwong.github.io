@@ -1,7 +1,7 @@
-<a href="https://slickdeals.net/deals/gardening/" target="_blank">Gardening & Outdoor</a><br>
-<a href="https://slickdeals.net/deals/coffee/" target="_blank">Coffee & Espresso</a><br>
-<a href="https://slickdeals.net/deals/kids-toys/" target="_blank">Kids Toys</a><br>
-<a href="https://slickdeals.net/deals/children/" target="_blank">Babies & Kids</a><br>
-<a href="https://slickdeals.net/deals/music/" target="_blank">Music</a><br>
-<a href="https://slickdeals.net/deals/musical-instruments/" target="_blank">Musical Instruments</a><br>
-<a href="https://slickdeals.net/deals/sport/" target="_blank">Sporting Goods</a><br>
+<a href="https://slickdeals.net/deals/apple/" target="_blank">Apple</a><br>
+<a href="https://slickdeals.net/deals/tech/" target="_blank">Tech & Electronics</a><br>
+<a href="https://slickdeals.net/deals/smart-watch/" target="_blank">Smart Watches & Wearables</a><br>
+<a href="https://slickdeals.net/deals/mens/" target="_blank">Men's Clothing & Accessories</a><br>
+<a href="https://slickdeals.net/deals/mens-accessories/" target="_blank">Men's Accessories</a><br>
+<a href="https://slickdeals.net/deals/shoes/" target="_blank">Shoes</a><br>
+<a href="https://slickdeals.net/deals/tickets/" target="_blank">Tickets & Admission</a><br>
