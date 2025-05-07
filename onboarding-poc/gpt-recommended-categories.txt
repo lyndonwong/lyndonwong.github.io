@@ -1,7 +1,7 @@
-<a href="https://slickdeals.net/deals/software/" target="_blank">Software</a><br>
 <a href="https://slickdeals.net/deals/photo/" target="_blank">Cameras</a><br>
 <a href="https://slickdeals.net/deals/camera-accessories/" target="_blank">Camera Accessories</a><br>
+<a href="https://slickdeals.net/deals/software/" target="_blank">Software</a><br>
 <a href="https://slickdeals.net/laptop-deals/" target="_blank">Laptops</a><br>
+<a href="https://slickdeals.net/deals/tablet/" target="_blank">Tablets & eReaders</a><br>
 <a href="https://slickdeals.net/deals/textbooks/" target="_blank">Textbooks</a><br>
 <a href="https://slickdeals.net/deals/meal-prep-food-containers/" target="_blank">Meal Prep & Food Containers</a><br>
-<a href="https://slickdeals.net/deals/streaming-services/" target="_blank">Streaming Services</a><br>
