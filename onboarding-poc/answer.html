@@ -108,7 +108,8 @@
                 contentContainer1.textContent = 'Error loading content.';
             });
         </script>
-        <br>        
+        <br>
+        <!-- START comment out
         <div id="content-container3"></div>
         <script>
             const contentContainer3 = document.getElementById('content-container3');
@@ -138,10 +139,11 @@
                 contentContainer4.textContent = 'Error loading content.';
             });
         </script>
+        END comment out -->
         <!-- START try to combine deal-alerts and forums sentences into a single paragraph -->
-        <div id="alerts-forums-content-container"></div>
+        <div id="combined-content-container"></div>
         <script>
-            const combinedContainer = document.getElementById('alerts-forums-content-container');
+            const combinedContainer = document.getElementById('combined-content-container');
             
             // Create a paragraph element to hold both texts
             const paragraph = document.createElement('p');
@@ -151,17 +153,19 @@
             async function loadAndCombineTexts() {
                 try {
                     // Fetch both files in parallel
-                    const [dealAlertsResponse, forumsResponse] = await Promise.all([
+                    const [allCategoriesResponse, dealAlertsResponse, forumsResponse] = await Promise.all([
+                        fetch('gpt-all-categories.txt'),
                         fetch('gpt-deal-alerts.txt'),
                         fetch('gpt-forums.txt')
                     ]);
                     
-                    // Get the text content from both responses
+                    // Get the text content from all responses
+                    const allCategoriesText = await (allCategoriesResponse.text();
                     const dealAlertsText = await dealAlertsResponse.text();
                     const forumsText = await forumsResponse.text();
                     
                     // Combine the texts in the paragraph (with a space in between)
-                    paragraph.innerHTML = dealAlertsText + ' ' + forumsText;
+                    paragraph.innerHTML = allCategoriesText + ' ' + dealAlertsText + ' ' + forumsText;
                 } catch (error) {
                     console.error('Error loading text files:', error);
                     paragraph.textContent = 'Error loading content.';
