@@ -138,6 +138,40 @@
                 contentContainer4.textContent = 'Error loading content.';
             });
         </script>
+        <!-- START try to combine deal-alerts and forums sentences into a single paragraph -->
+        <div id="alerts-forums-content-container"></div>
+        <script>
+            const combinedContainer = document.getElementById('alerts-forums-content-container');
+            
+            // Create a paragraph element to hold both texts
+            const paragraph = document.createElement('p');
+            combinedContainer.appendChild(paragraph);
+            
+            // Define a function to fetch both files and combine them
+            async function loadAndCombineTexts() {
+                try {
+                    // Fetch both files in parallel
+                    const [dealAlertsResponse, forumsResponse] = await Promise.all([
+                        fetch('gpt-deal-alerts.txt'),
+                        fetch('gpt-forums.txt')
+                    ]);
+                    
+                    // Get the text content from both responses
+                    const dealAlertsText = await dealAlertsResponse.text();
+                    const forumsText = await forumsResponse.text();
+                    
+                    // Combine the texts in the paragraph (with a space in between)
+                    paragraph.innerHTML = dealAlertsText + ' ' + forumsText;
+                } catch (error) {
+                    console.error('Error loading text files:', error);
+                    paragraph.textContent = 'Error loading content.';
+                }
+            } 
+            // Execute the function
+            loadAndCombineTexts();
+        </script>
+        <!-- END try to combine deal-alerts and forums sentences into a single paragraph -->
+
         <br>
         <p>For your anonymity in Slickdeals community forums and our communications with you, we wish to provide you with an assumed name.</p>
         <div id="content-container6"></div>
