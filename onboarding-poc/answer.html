@@ -109,43 +109,13 @@
             });
         </script>
         <br>
-        <!-- START comment out
-        <div id="content-container3"></div>
-        <script>
-            const contentContainer3 = document.getElementById('content-container3');
 
-            fetch('gpt-deal-alerts.txt')
-                .then(response => response.text())
-                .then(data => {
-                    contentContainer3.innerHTML = data;
-                })
-                .catch(error => {
-                console.error('Error loading text file:', error);
-                contentContainer3.textContent = 'Error loading content.';
-            });
-        </script>
-        <br>
-        <div id="content-container4"></div>
-        <script>
-            const contentContainer4 = document.getElementById('content-container4');
-
-            fetch('gpt-forums.txt')
-                .then(response => response.text())
-                .then(data => {
-                    contentContainer4.innerHTML = data;
-                })
-                .catch(error => {
-                console.error('Error loading text file:', error);
-                contentContainer4.textContent = 'Error loading content.';
-            });
-        </script>
-        END comment out -->
         <!-- START try to combine deal-alerts and forums sentences into a single paragraph -->
         <div id="combined-content-container"></div>
         <script>
             const combinedContainer = document.getElementById('combined-content-container');
             
-            // Create a paragraph element to hold both texts
+            // Create a paragraph element to hold all texts
             const paragraph = document.createElement('p');
             combinedContainer.appendChild(paragraph);
             
