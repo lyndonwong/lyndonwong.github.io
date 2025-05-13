@@ -65,7 +65,7 @@
     <div class="full-width-image"></div>
     <div class="container">
         <h1>Onboarding POC</h1>
-        <p>We hear you:</p>
+        <p>User's account registration interest profile:</p>
         <div id="content-container5"></div>
         <script>
           fetch('gpt-interests.txt') // Replace 'your_text_file.txt' with the actual path to your file
@@ -145,7 +145,7 @@
         </script>
         <!-- END try to combine deal-alerts and forums sentences into a single paragraph -->
 
-        <p>There's great value in learning from and sharing with members in the community forums. To encourage your participation, in a privacy-preserving manner, we would like to provide you with a Slickdeals Alias that reflects who you are.</p>
+        <p>Slickdeals members love the forums. To encourage your participation, in a privacy-preserving manner, we provide you with a Slickdeals Alias that reflects who you are.
         <div id="content-container6"></div>
         <script>
           fetch('gpt-perceptions.txt') // Replace 'your_text_file.txt' with the actual path to your file
@@ -158,10 +158,9 @@
               document.getElementById('content-container6').textContent = 'Error loading content.';
             });
         </script>
-        <p>With that vibe, we dub you:</p>
-        <br>
+        With that vibe, let's dub you:</p>
         <div id="content-container7"></div>
-        <script>
+        <strong><script>
           fetch('gpt-pseudonym.txt') // Replace 'your_text_file.txt' with the actual path to your file
             .then(response => response.text())
             .then(data => {
@@ -172,6 +171,8 @@
               document.getElementById('content-container7').textContent = 'Error loading content.';
             });
         </script>
+        </strong>
+        <br>
         <div id="content-container8"></div>
         <script>
           fetch('gpt-reasoning.txt') // Replace 'your_text_file.txt' with the actual path to your file
