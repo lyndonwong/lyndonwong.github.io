@@ -65,8 +65,9 @@
     <div class="full-width-image"></div>
     <div class="container">
         <h1>Onboarding POC</h1>
-        <p><strong>GOAL</strong>: To explore how generative AI might improve engagement rates for new signups, build a proof-of-concept demo for a hypothetical Slickdeals new user signup, leveraging APIs from OpenAI and Anthropic. [Slickdeals is a popular online deals site, where the most loyal signups actively contribute to a deal sharing community, and tend to favor remaining anonymous.]</p>
-        <p><strong>User entered interest profile</strong>:</p>
+        <p><strong>GOAL</strong>: To explore how generative AI might improve engagement rates for new signups.</p>
+        <p><strong>DEMO</strong>: Proof-of-concept for a hypothetical Slickdeals new user signup, leveraging APIs from OpenAI and Anthropic. Slickdeals is a popular online deals site, where signups actively contribute to a deal sharing community, and tend to favor remaining anonymous.</p>
+        <p><strong>User enters interest profile</strong>:</p>
         <div id="content-container5"></div>
         <script>
           fetch('gpt-interests.txt') // Replace 'your_text_file.txt' with the actual path to your file
@@ -148,23 +149,22 @@
         <!-- END try to combine deal-alerts and forums sentences into a single paragraph -->
 
         <p>Slickdeals members love the forums. To encourage your participation, in a privacy-preserving manner, we provide you with a Slickdeals Alias that reflects who you are.</p>
-        <div id="content-container6"></div>
         <p>
-            <script>
-              fetch('gpt-perceptions.txt') // Replace 'your_text_file.txt' with the actual path to your file
-                .then(response => response.text())
-                .then(data => {
-                  document.getElementById('content-container6').textContent = data;
-                })
-                .catch(error => {
-                  console.error('Error loading text file:', error);
-                  document.getElementById('content-container6').textContent = 'Error loading content.';
-                });
-            </script>
-        With that vibe, let's dub you:
+            <span id="content-container6"></span>
+            With that vibe, let's dub you:
+            <strong><span id="content-container7"></span></strong>
         </p>
-        <div id="content-container7"></div>
-        <strong><script>
+        <script>
+          fetch('gpt-perceptions.txt') // Replace 'your_text_file.txt' with the actual path to your file
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('content-container6').textContent = data + ' ';
+            })
+            .catch(error => {
+              console.error('Error loading text file:', error);
+              document.getElementById('content-container6').textContent = 'Error loading content.';
+            });
+
           fetch('gpt-pseudonym.txt') // Replace 'your_text_file.txt' with the actual path to your file
             .then(response => response.text())
             .then(data => {
@@ -175,7 +175,6 @@
               document.getElementById('content-container7').textContent = 'Error loading content.';
             });
         </script>
-        </strong>
         <br>
         <div id="content-container8"></div>
         <script>
