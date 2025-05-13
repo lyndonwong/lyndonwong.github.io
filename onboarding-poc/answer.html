@@ -150,22 +150,10 @@
         <!-- END try to combine deal-alerts and forums sentences into a single paragraph -->
 
         <p>
-            Slickdeals members love the forums. To encourage your participation, in a privacy-preserving manner, we provide you with a Slickdeals Alias that reflects who you are.
-            <span id="content-container6"></span>
-            With that vibe, we'd like to dub you:<br><br>
+            Slickdeals members love the forums. To encourage your participation, in a privacy-preserving manner, we provide you with a Slickdeals Alias that reflects who you are. We suggest:<br><br>
             <strong><span id="content-container7"></span></strong>
         </p>
         <script>
-          fetch('gpt-perceptions.txt') // Replace 'your_text_file.txt' with the actual path to your file
-            .then(response => response.text())
-            .then(data => {
-              document.getElementById('content-container6').textContent = data + ' ';
-            })
-            .catch(error => {
-              console.error('Error loading text file:', error);
-              document.getElementById('content-container6').textContent = 'Error loading content.';
-            });
-
           fetch('gpt-pseudonym.txt') // Replace 'your_text_file.txt' with the actual path to your file
             .then(response => response.text())
             .then(data => {
@@ -178,7 +166,7 @@
         </script>
         <p>
             <span id="content-container8"></span>
-            If you like it, it's yours to use. You can also change it <a href="https://slickdeals.net/forums/profile.php?do=accountsettings" target="_blank">HERE</a>.
+            If you like it, it's yours to use. You can also change it <a href="https://slickdeals.net/forums/profile.php?do=accountsettings" target="_blank">here</a>.
         </p>
         <script>
           fetch('gpt-reasoning.txt') // Replace 'your_text_file.txt' with the actual path to your file
@@ -191,7 +179,7 @@
               document.getElementById('content-container8').textContent = 'Error loading content.';
             });
         </script>
-        <p>Start saving now!</p>   
+        <p>Start saving <a href="https://slickdeals.net/" target='_blank'>now</a>!</p>   
         <!-- bring in external text within structured markup -->
         <hr>
     </div>
