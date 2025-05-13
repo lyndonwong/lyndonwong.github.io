@@ -1,7 +1,7 @@
-<a href="https://slickdeals.net/deals/babies-and-kids/" target="_blank">Babies & Kids</a><br>
-<a href="https://slickdeals.net/deals/gardening/" target="_blank">Gardening & Outdoor</a><br>
-<a href="https://slickdeals.net/deals/coffee/" target="_blank">Coffee & Espresso</a><br>
-<a href="https://slickdeals.net/deals/music/" target="_blank">Music</a><br>
-<a href="https://slickdeals.net/deals/musical-instruments/" target="_blank">Musical Instruments</a><br>
+<a href="https://slickdeals.net/deals/womens-activewear/" target="_blank">Women's Activewear</a><br>
 <a href="https://slickdeals.net/deals/sport/" target="_blank">Sporting Goods</a><br>
-<a href="https://slickdeals.net/deals/kids-toys/" target="_blank">Kids Toys</a><br>
+<a href="https://slickdeals.net/deals/baking/" target="_blank">Baking and Cooking</a><br>
+<a href="https://slickdeals.net/deals/kitchenware/" target="_blank">Kitchenware & Cookware</a><br>
+<a href="https://slickdeals.net/deals/womens/" target="_blank">Women's Clothing & Accessories</a><br>
+<a href="https://slickdeals.net/deals/dating-services/" target="_blank">Dating Services</a><br>
+<a href="https://slickdeals.net/deals/shoes/" target="_blank">Shoes</a><br>
