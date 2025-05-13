@@ -1,7 +1,7 @@
 <a href="https://slickdeals.net/deals/bicycles/" target="_blank">Bicycles & Bike Accessories</a><br>
 <a href="https://slickdeals.net/travel-deals/" target="_blank">Travel & Vacations</a><br>
+<a href="https://slickdeals.net/deals/luggage-bags/" target="_blank">Luggage</a><br>
 <a href="https://slickdeals.net/deals/jewelry/" target="_blank">Jewelry</a><br>
-<a href="https://slickdeals.net/deals/bags/" target="_blank">Bags & Luggage</a><br>
 <a href="https://slickdeals.net/deals/fitness/" target="_blank">Fitness & Wellness</a><br>
+<a href="https://slickdeals.net/deals/womens/" target="_blank">Women's Clothing & Accessories</a><br>
 <a href="https://slickdeals.net/deals/outdoors/" target="_blank">Outdoors</a><br>
-<a href="https://slickdeals.net/deals/books/" target="_blank">Books</a><br>
