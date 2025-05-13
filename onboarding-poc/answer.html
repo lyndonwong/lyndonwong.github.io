@@ -78,7 +78,7 @@
               document.getElementById('content-container5').textContent = 'Error loading content.';
             });
         </script>
-        <br>
+        <hr>
         <div id="content-container2"></div>
         <script>
             const contentContainer2 = document.getElementById('content-container2');
@@ -145,9 +145,9 @@
         </script>
         <!-- END try to combine deal-alerts and forums sentences into a single paragraph -->
 
-        <p>Slickdeals members love the forums. To encourage your participation, in a privacy-preserving manner, we provide you with a Slickdeals Alias that reflects who you are.
+        <p>Slickdeals members love the forums. To encourage your participation, in a privacy-preserving manner, we provide you with a Slickdeals Alias that reflects who you are.</p>
         <div id="content-container6"></div>
-        <script>
+        <p></p><script>
           fetch('gpt-perceptions.txt') // Replace 'your_text_file.txt' with the actual path to your file
             .then(response => response.text())
             .then(data => {
@@ -185,7 +185,6 @@
               document.getElementById('content-container8').textContent = 'Error loading content.';
             });
         </script>
-        <br>
         <p>If you like it, it's yours to use. You can also change it <a href="https://slickdeals.net/forums/profile.php?do=accountsettings" target="_blank">HERE</a>. 
 
         <!-- bring in external text within structured markup -->
