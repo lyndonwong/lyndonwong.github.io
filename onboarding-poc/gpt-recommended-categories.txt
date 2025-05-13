@@ -1,7 +1,7 @@
-<a href="https://slickdeals.net/deals/bicycles/" target="_blank">Bicycles & Bike Accessories</a><br>
-<a href="https://slickdeals.net/deals/luggage-bags/" target="_blank">Luggage</a><br>
-<a href="https://slickdeals.net/deals/jewelry/" target="_blank">Jewelry</a><br>
-<a href="https://slickdeals.net/deals/travel-deals/" target="_blank">Travel & Vacations</a><br>
-<a href="https://slickdeals.net/deals/fishing/" target="_blank">Fishing</a><br>
-<a href="https://slickdeals.net/deals/fitness/" target="_blank">Fitness & Wellness</a><br>
-<a href="https://slickdeals.net/deals/apple/" target="_blank">Apple</a><br>
+<a href="https://slickdeals.net/deals/home/"> target="_blank">Home & Home Improvement</a><br>
+<a href="https://slickdeals.net/furniture-deals/"> target="_blank">Furniture</a><br>
+<a href="https://slickdeals.net/deals/gardening/"> target="_blank">Gardening & Outdoor</a><br>
+<a href="https://slickdeals.net/deals/outdoors/"> target="_blank">Outdoors</a><br>
+<a href="https://slickdeals.net/deals/apple/"> target="_blank">Apple</a><br>
+<a href="https://slickdeals.net/deals/finance/"> target="_blank">Finance</a><br>
+<a href="https://slickdeals.net/deals/computer-deals/"> target="_blank">Computers</a><br>
