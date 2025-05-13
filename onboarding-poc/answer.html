@@ -65,7 +65,8 @@
     <div class="full-width-image"></div>
     <div class="container">
         <h1>Onboarding POC</h1>
-        <p>User's account registration interest profile:</p>
+        <p><strong>GOAL</strong>: To explore how generative AI might improve engagement rates for new signups, build a proof-of-concept demo for a hypothetical Slickdeals new user signup, leveraging APIs from OpenAI and Anthropic. [Slickdeals is a popular online deals site, where the most loyal signups actively contribute to a deal sharing community, and tend to favor remaining anonymous.]</p>
+        <p><strong>User entered interest profile</strong>:</p>
         <div id="content-container5"></div>
         <script>
           fetch('gpt-interests.txt') // Replace 'your_text_file.txt' with the actual path to your file
@@ -79,6 +80,7 @@
             });
         </script>
         <hr>
+        <p><strong>AI Personalized Welcome</strong></p>
         <div id="content-container2"></div>
         <script>
             const contentContainer2 = document.getElementById('content-container2');
@@ -147,18 +149,20 @@
 
         <p>Slickdeals members love the forums. To encourage your participation, in a privacy-preserving manner, we provide you with a Slickdeals Alias that reflects who you are.</p>
         <div id="content-container6"></div>
-        <p></p><script>
-          fetch('gpt-perceptions.txt') // Replace 'your_text_file.txt' with the actual path to your file
-            .then(response => response.text())
-            .then(data => {
-              document.getElementById('content-container6').textContent = data;
-            })
-            .catch(error => {
-              console.error('Error loading text file:', error);
-              document.getElementById('content-container6').textContent = 'Error loading content.';
-            });
-        </script>
-        With that vibe, let's dub you:</p>
+        <p>
+            <script>
+              fetch('gpt-perceptions.txt') // Replace 'your_text_file.txt' with the actual path to your file
+                .then(response => response.text())
+                .then(data => {
+                  document.getElementById('content-container6').textContent = data;
+                })
+                .catch(error => {
+                  console.error('Error loading text file:', error);
+                  document.getElementById('content-container6').textContent = 'Error loading content.';
+                });
+            </script>
+        With that vibe, let's dub you:
+        </p>
         <div id="content-container7"></div>
         <strong><script>
           fetch('gpt-pseudonym.txt') // Replace 'your_text_file.txt' with the actual path to your file
@@ -185,11 +189,11 @@
               document.getElementById('content-container8').textContent = 'Error loading content.';
             });
         </script>
-        <p>If you like it, it's yours to use. You can also change it <a href="https://slickdeals.net/forums/profile.php?do=accountsettings" target="_blank">HERE</a>. 
+        <p>If you like it, it's yours to use. You can also change it <a href="https://slickdeals.net/forums/profile.php?do=accountsettings" target="_blank">HERE</a>.</p>
 
         <!-- bring in external text within structured markup -->
-
         <hr>
-    </div>   
+    </div>
+    <br>
 </body>
 </html>
