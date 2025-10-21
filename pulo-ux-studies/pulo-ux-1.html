@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseLocale Initiative: PARK: Alma Park</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+        /* Custom styles for a subtle glow effect on feedback buttons */
+        .feedback-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .feedback-btn {
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <svg class="h-8 w-auto" viewBox="0 0 160 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.233 11.4583C21.233 13.1583 20.2167 14.1583 18.6333 14.1583C17.05 14.1583 16.0167 13.1583 16.0167 11.4583C16.0167 9.75833 17.05 8.75833 18.6333 8.75833C20.2167 8.75833 21.233 9.75833 21.233 11.4583ZM18.6333 20.9417C15.6333 20.9417 13.4333 18.7917 13.4333 15.8417V0H10.85V20.725C10.85 22.1917 11.3 23.325 12.1667 24.125C13.05 24.9083 14.2333 25.3333 15.5833 25.3333H21.6833V22.8083H18.6333V20.9417Z" fill="#10B981"/>
+                        <path d="M30.0833 11.4583C30.0833 13.1583 29.0667 14.1583 27.4833 14.1583C25.9 14.1583 24.8667 13.1583 24.8667 11.4583C24.8667 9.75833 25.9 8.75833 27.4833 8.75833C29.0667 8.75833 30.0833 9.75833 30.0833 11.4583ZM27.4833 20.9417C24.4833 20.9417 22.2833 18.7917 22.2833 15.8417V0H19.7V20.725C19.7 22.1917 20.15 23.325 21.0167 24.125C21.9 24.9083 23.0833 25.3333 24.4333 25.3333H30.5333V22.8083H27.4833V20.9417Z" fill="#10B981"/>
+                        <path d="M41.7417 20.9417C41.7417 23.225 40.0917 25.3333 37.1583 25.3333C33.8083 25.3333 31.7583 22.9 31.7583 20.025V0H34.3417V19.7417C34.3417 21.6417 35.325 22.8583 37.175 22.8583C38.925 22.8583 40.025 21.7583 40.025 20.0083V0H42.6083V20.1917L41.7417 20.9417Z" fill="#10B981"/>
+                        <path d="M51.05 25H48.4667V0H51.05V25Z" fill="#10B981"/>
+                        <path d="M63.7833 25.3333C60.8333 25.3333 58.75 23.1667 58.75 20.1V0H61.3333V20.1C61.3333 21.7 62.2667 22.8583 63.8 22.8583C65.3 22.8583 66.25 21.7167 66.25 20.1V0H68.8333V20.1C68.8333 23.1667 66.7333 25.3333 63.7833 25.3333Z" fill="#10B981"/>
+                        <path d="M82.1612 19.4833L79.1445 14.3333H74.3945V25H71.8112V0H79.6278C82.8945 0 84.7778 2.15 84.7778 5.1C84.7778 7.35 83.7278 8.93333 82.0278 9.7L85.4945 15.0833L82.1612 19.4833ZM79.1778 2.525C76.9945 2.525 75.6445 3.55833 75.6445 5.1C75.6445 6.625 76.9945 7.64167 79.1778 7.64167H79.7945C81.3945 7.64167 82.1945 6.79167 82.1945 5.1C82.1945 3.425 81.3945 2.525 79.7945 2.525H79.1778Z" fill="#10B981"/>
+                        <path d="M96.4833 25.3333C92.9833 25.3333 90.5833 22.825 90.5833 19.1083V6.225C90.5833 2.50833 92.9833 0 96.4833 0C100 0 102.383 2.50833 102.383 6.225V19.1083C102.383 22.825 100 25.3333 96.4833 25.3333ZM96.4833 22.8083C98.4333 22.8083 99.8 21.375 99.8 19.1083V6.225C99.8 3.95833 98.4333 2.525 96.4833 2.525C94.5333 2.525 93.1667 3.95833 93.1667 6.225V19.1083C93.1667 21.375 94.5333 22.8083 96.4833 22.8083Z" fill="#10B981"/>
+                        <path d="M110.122 20.1V0H112.705V20.1C112.705 21.7 113.639 22.8583 115.165 22.8583C116.665 22.8583 117.615 21.7167 117.615 20.1V0H120.199V20.1C120.199 23.1667 118.099 25.3333 115.149 25.3333C112.199 25.3333 110.122 23.1667 110.122 20.1Z" fill="#10B981"/>
+                        <path d="M129.541 25.3333C126.541 25.3333 124.724 23.325 124.724 20.725V17.9H122.141V15.65H124.724V10.2H127.307V15.65H130.607V17.9H127.307V20.725C127.307 21.9 128.024 22.8083 129.457 22.8083H130.607V25.05H129.541V25.3333Z" fill="#10B981"/>
+                        <path d="M141.761 14.3333L136.194 0H139.194L142.161 7.64167L145.127 0H148.127L142.561 14.3333V25H139.977V14.3333H141.761Z" fill="#10B981"/>
+                        <path d="M158.404 25.3333C154.904 25.3333 152.504 22.825 152.504 19.1083V6.225C152.504 2.50833 154.904 0 158.404 0C161.904 0 164.287 2.50833 164.287 6.225V19.1083C164.287 22.825 161.904 25.3333 158.404 25.3333ZM158.404 22.8083C160.354 22.8083 161.72 21.375 161.72 19.1083V6.225C161.72 3.95833 160.354 2.525 158.404 2.525C156.454 2.525 155.087 3.95833 155.087 6.225V19.1083C155.087 21.375 156.454 22.8083 158.404 22.8083Z" fill="#10B981"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-gray-800 tracking-tight">PulseLocale</span>
+                </div>
+                <!-- Navigation Links & Profile -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-gray-900 font-medium">Feed</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 font-medium">Explore</a>
+                    <a href="#" class="bg-gray-200 text-gray-700 rounded-full h-8 w-8 flex items-center justify-center font-bold">P</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+            
+            <!-- Left Column: Main Project Info & Feedback -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- (1 & 2) Project Name & Location -->
+                <section>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <span class="text-sm font-medium text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">City of San Jose</span>
+                        <h1 class="text-4xl font-bold text-gray-900 mt-2">PARK: Alma Park</h1>
+                        <p class="mt-2 text-lg text-gray-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                            1413 Sanborn Avenue and 100-104 W. Alma Avenue, San Jose, CA
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Project Hero Image -->
+                <div>
+                    <img class="w-full h-auto object-cover rounded-lg shadow-md" src="https://placehold.co/800x400/34D399/FFFFFF?text=Alma+Park+Concept" alt="Conceptual drawing of Alma Park">
+                </div>
+
+                <!-- (4) User Feedback Input -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Your Feedback Matters</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center">
+                        <a href="#" class="feedback-btn group bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center space-y-2 border border-transparent hover:border-emerald-500">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                            </svg>
+                            <span class="font-semibold text-gray-700">Like</span>
+                            <span class="text-sm text-gray-500 font-bold">1</span>
+                        </a>
+                        <a href="#" class="feedback-btn group bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center space-y-2 border border-transparent hover:border-red-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.106-1.79l-.05-.025A4 4 0 0011.057 2H5.642a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.867a4 4 0 00.8-2.4z" />
+                            </svg>
+                            <span class="font-semibold text-gray-700">Dislike</span>
+                            <span class="text-sm text-gray-500 font-bold">0</span>
+                        </a>
+                        <a href="#comments" class="feedback-btn group bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center space-y-2 border border-transparent hover:border-blue-500">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.08-3.239A8.98 8.98 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.416 14.532a7.023 7.023 0 001.545.811A6.972 6.972 0 0010 16c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6c0 .58.082 1.137.234 1.661l.245.813-1.255 3.766 3.767-1.255.813.245z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="font-semibold text-gray-700">Comment</span>
+                            <span class="text-sm text-gray-500 font-bold">1</span>
+                        </a>
+                        <a href="#" class="feedback-btn group bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center space-y-2 border border-transparent hover:border-purple-500">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                            </svg>
+                            <span class="font-semibold text-gray-700">Share</span>
+                            <span class="text-sm text-gray-500 font-bold">5</span>
+                        </a>
+                        <a href="#" class="feedback-btn group bg-emerald-600 text-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center space-y-2 hover:bg-emerald-700 col-span-2 sm:col-span-1 md:col-span-1">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="font-semibold">Follow</span>
+                            <span class="text-sm font-bold">23 Followers</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- (3) Project Description -->
+                <section class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-800">Description</h3>
+                    <div class="mt-4 text-gray-600 space-y-4 prose max-w-none">
+                        <p>Design and construction of a 0.33-acre park located at the southwest corner of Alma Avenue and Sanborn Ave based on the master plan. Park elements include: street trees, fences and gates, trellis, play equipment, tables and benches, resilient rubber surfacing, trash enclosure, seat wall, movie wall, and planting.</p>
+                        <p><strong>Lead Division:</strong> City Facilities Architectural Services <br> <strong>Last Update:</strong> 2025-08-01</p>
+                    </div>
+                </section>
+                
+                <!-- (5) Existing User Comments -->
+                <section id="comments" class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Comments (1)</h3>
+                    <!-- New Comment Form -->
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                             <span class="inline-block h-10 w-10 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
+                                <svg class="h-full w-full text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <form action="#">
+                                <div class="border border-gray-300 rounded-lg shadow-sm overflow-hidden focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500">
+                                    <label for="comment" class="sr-only">Add your comment</label>
+                                    <textarea rows="3" name="comment" id="comment" class="block w-full py-3 border-0 resize-none focus:ring-0 sm:text-sm p-4" placeholder="Share your thoughts..."></textarea>
+                                    <div class="py-2" aria-hidden="true"><div class="py-px"><div class="h-9"></div></div></div>
+                                </div>
+                                <div class="absolute bottom-0 right-0 m-2 flex justify-end">
+                                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">Post</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Existing Comments List -->
+                    <div class="mt-6 space-y-6">
+                        <div class="flex space-x-4">
+                             <div class="flex-shrink-0">
+                                <span class="bg-blue-200 text-blue-800 rounded-full h-10 w-10 flex items-center justify-center font-bold">LW</span>
+                            </div>
+                            <div>
+                                <div class="text-sm">
+                                    <a href="#" class="font-medium text-gray-900">L-test-demand W-test-demand</a>
+                                    <span class="text-gray-500">· just now</span>
+                                </div>
+                                <p class="mt-1 text-gray-700">This would be awesome. Much needed in the neighborhood!</p>
+                                <div class="mt-2 text-sm text-gray-500 flex space-x-4">
+                                    <button>Reply</button>
+                                    <button>Edit</button>
+                                    <button>Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="mt-8 lg:mt-0 space-y-8">
+
+                <!-- (6) Project Status -->
+                <section class="bg-white p-6 rounded-lg shadow-sm">
+                     <h3 class="text-xl font-bold text-gray-800">Project at a Glance</h3>
+                     <dl class="mt-4 space-y-3 text-sm">
+                         <div class="flex justify-between">
+                             <dt class="text-gray-500">Status</dt>
+                             <dd class="font-medium text-gray-900">Published</dd>
+                         </div>
+                         <div class="flex justify-between">
+                             <dt class="text-gray-500">Phase</dt>
+                             <dd class="font-medium text-gray-900">Proposed</dd>
+                         </div>
+                         <div class="flex justify-between">
+                             <dt class="text-gray-500">Type</dt>
+                             <dd class="font-medium text-gray-900">Infrastructure</dd>
+                         </div>
+                         <div class="flex justify-between">
+                             <dt class="text-gray-500">Budget</dt>
+                             <dd class="font-medium text-gray-900">Not specified</dd>
+                         </div>
+                         <div class="flex justify-between">
+                             <dt class="text-gray-500">Start Date</dt>
+                             <dd class="font-medium text-gray-900">Dec 3, 2026</dd>
+                         </div>
+                         <div class="flex justify-between">
+                             <dt class="text-gray-500">End Date</dt>
+                             <dd class="font-medium text-gray-900">Sep 20, 2027</dd>
+                         </div>
+                     </dl>
+                </section>
+
+                <!-- (7) Events -->
+                <section class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-800">Events & Milestones</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 bg-emerald-500 text-white rounded-md h-12 w-12 flex flex-col items-center justify-center text-xs font-bold leading-none">
+                                <span>SEP</span>
+                                <span class="text-lg">19</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Beneficial Use</p>
+                                <p class="text-sm text-gray-500">Sep 19, 2027, 6:00 PM PDT</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                           <div class="flex-shrink-0 bg-gray-300 text-gray-700 rounded-md h-12 w-12 flex flex-col items-center justify-center text-xs font-bold leading-none">
+                                <span>FEB</span>
+                                <span class="text-lg">9</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Construction Start</p>
+                                <p class="text-sm text-gray-500">Feb 9, 2027, 4:00 PM PST</p>
+                            </div>
+                        </li>
+                         <li class="flex items-start space-x-3">
+                           <div class="flex-shrink-0 bg-gray-300 text-gray-700 rounded-md h-12 w-12 flex flex-col items-center justify-center text-xs font-bold leading-none">
+                                <span>DEC</span>
+                                <span class="text-lg">2</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Award Date</p>
+                                <p class="text-sm text-gray-500">Dec 2, 2026, 4:00 PM PST</p>
+                            </div>
+                        </li>
+                    </ul>
+                     <button class="mt-4 w-full text-center text-sm font-medium text-emerald-600 hover:text-emerald-800">View all events</button>
+                </section>
+
+                <!-- (8) Supporting Documents -->
+                <section class="bg-white p-6 rounded-lg shadow-sm">
+                     <h3 class="text-xl font-bold text-gray-800">Documents & Media</h3>
+                     <div class="mt-4 text-center text-gray-500 border-2 border-dashed border-gray-300 rounded-lg p-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <p class="mt-2 text-sm">No documents or media have been uploaded yet.</p>
+                     </div>
+                </section>
+
+            </aside>
+        </div>
+    </main>
+    
+</body>
+</html>
