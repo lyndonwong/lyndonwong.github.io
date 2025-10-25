@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulo: Explore Initiatives</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+        /* Custom scrollbar for the list */
+        .initiative-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .initiative-list::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        .initiative-list::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .initiative-list::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation (Consistent with Project Page) -->
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <svg class="h-8 w-auto" viewBox="0 0 160 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.233 11.4583C21.233 13.1583 20.2167 14.1583 18.6333 14.1583C17.05 14.1583 16.0167 13.1583 16.0167 11.4583C16.0167 9.75833 17.05 8.75833 18.6333 8.75833C20.2167 8.75833 21.233 9.75833 21.233 11.4583ZM18.6333 20.9417C15.6333 20.9417 13.4333 18.7917 13.4333 15.8417V0H10.85V20.725C10.85 22.1917 11.3 23.325 12.1667 24.125C13.05 24.9083 14.2333 25.3333 15.5833 25.3333H21.6833V22.8083H18.6333V20.9417Z" fill="#10B981"/><path d="M30.0833 11.4583C30.0833 13.1583 29.0667 14.1583 27.4833 14.1583C25.9 14.1583 24.8667 13.1583 24.8667 11.4583C24.8667 9.75833 25.9 8.75833 27.4833 8.75833C29.0667 8.75833 30.0833 9.75833 30.0833 11.4583ZM27.4833 20.9417C24.4833 20.9417 22.2833 18.7917 22.2833 15.8417V0H19.7V20.725C19.7 22.1917 20.15 23.325 21.0167 24.125C21.9 24.9083 23.0833 25.3333 24.4333 25.3333H30.5333V22.8083H27.4833V20.9417Z" fill="#10B981"/><path d="M41.7417 20.9417C41.7417 23.225 40.0917 25.3333 37.1583 25.3333C33.8083 25.3333 31.7583 22.9 31.7583 20.025V0H34.3417V19.7417C34.3417 21.6417 35.325 22.8583 37.175 22.8583C38.925 22.8583 40.025 21.7583 40.025 20.0083V0H42.6083V20.1917L41.7417 20.9417Z" fill="#10B981"/><path d="M51.05 25H48.4667V0H51.05V25Z" fill="#10B981"/><path d="M63.7833 25.3333C60.8333 25.3333 58.75 23.1667 58.75 20.1V0H61.3333V20.1C61.3333 21.7 62.2667 22.8583 63.8 22.8583C65.3 22.8583 66.25 21.7167 66.25 20.1V0H68.8333V20.1C68.8333 23.1667 66.7333 25.3333 63.7833 25.3333Z" fill="#10B981"/><path d="M82.1612 19.4833L79.1445 14.3333H74.3945V25H71.8112V0H79.6278C82.8945 0 84.7778 2.15 84.7778 5.1C84.7778 7.35 83.7278 8.93333 82.0278 9.7L85.4945 15.0833L82.1612 19.4833ZM79.1778 2.525C76.9945 2.525 75.6445 3.55833 75.6445 5.1C75.6445 6.625 76.9945 7.64167 79.1778 7.64167H79.7945C81.3945 7.64167 82.1945 6.79167 82.1945 5.1C82.1945 3.425 81.3945 2.525 79.7945 2.525H79.1778Z" fill="#10B981"/><path d="M96.4833 25.3333C92.9833 25.3333 90.5833 22.825 90.5833 19.1083V6.225C90.5833 2.50833 92.9833 0 96.4833 0C100 0 102.383 2.50833 102.383 6.225V19.1083C102.383 22.825 100 25.3333 96.4833 25.3333ZM96.4833 22.8083C98.4333 22.8083 99.8 21.375 99.8 19.1083V6.225C99.8 3.95833 98.4333 2.525 96.4833 2.525C94.5333 2.525 93.1667 3.95833 93.1667 6.225V19.1083C93.1667 21.375 94.5333 22.8083 96.4833 22.8083Z" fill="#10B981"/><path d="M110.122 20.1V0H112.705V20.1C112.705 21.7 113.639 22.8583 115.165 22.8583C116.665 22.8583 117.615 21.7167 117.615 20.1V0H120.199V20.1C120.199 23.1667 118.099 25.3333 115.149 25.3333C112.199 25.3333 110.122 23.1667 110.122 20.1Z" fill="#10B981"/><path d="M129.541 25.3333C126.541 25.3333 124.724 23.325 124.724 20.725V17.9H122.141V15.65H124.724V10.2H127.307V15.65H130.607V17.9H127.307V20.725C127.307 21.9 128.024 22.8083 129.457 22.8083H130.607V25.05H129.541V25.3333Z" fill="#10B981"/><path d="M141.761 14.3333L136.194 0H139.194L142.161 7.64167L145.127 0H148.127L142.561 14.3333V25H139.977V14.3333H141.761Z" fill="#10B981"/><path d="M158.404 25.3333C154.904 25.3333 152.504 22.825 152.504 19.1083V6.225C152.504 2.50833 154.904 0 158.404 0C161.904 0 164.287 2.50833 164.287 6.225V19.1083C164.287 22.825 161.904 25.3333 158.404 25.3333ZM158.404 22.8083C160.354 22.8083 161.72 21.375 161.72 19.1083V6.225C161.72 3.95833 160.354 2.525 158.404 2.525C156.454 2.525 155.087 3.95833 155.087 6.225V19.1083C155.087 21.375 156.454 22.8083 158.404 22.8083Z" fill="#10B981"/></svg>
+                    <span class="ml-2 text-xl font-bold text-gray-800 tracking-tight">Pulo</span>
+                </div>
+                <!-- Navigation Links & Profile -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-gray-900 font-medium">Feed</a>
+                    <a href="#" class="text-emerald-600 border-b-2 border-emerald-600 font-medium">Explore</a>
+                    <a href="#" class="bg-gray-200 text-gray-700 rounded-full h-8 w-8 flex items-center justify-center font-bold">P</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Filters -->
+        <div class="bg-white p-4 rounded-lg shadow-sm mb-6 flex flex-wrap gap-4 items-center">
+            <input type="text" placeholder="Search by keyword..." class="flex-grow min-w-0 w-full sm:w-auto p-2 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500">
+            <select class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500">
+                <option>All Phases</option>
+                <option>Proposed</option>
+                <option>Construction</option>
+            </select>
+            <select class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500">
+                <option>All Ownership</option>
+                <option>City of San Jose</option>
+            </select>
+            <button class="w-full sm:w-auto px-4 py-2 bg-emerald-600 text-white font-medium rounded-md shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">Search</button>
+            <button class="w-full sm:w-auto px-4 py-2 bg-gray-100 text-gray-700 font-medium rounded-md shadow-sm hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">Reset</button>
+            <button class="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 flex items-center justify-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                <span>Locate me</span>
+            </button>
+        </div>
+
+        <!-- Two-column Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Left Column: Initiative List -->
+            <div class="md:col-span-1 h-[60vh] md:h-[75vh] overflow-y-auto space-y-4 pr-2 initiative-list">
+                <p class="text-sm text-gray-500">21 initiatives found within map view for "PARK".</p>
+
+                <!-- Refined Initiative Card 1 -->
+                <div class="list-card bg-white rounded-lg shadow-sm overflow-hidden transition-shadow hover:shadow-md cursor-pointer" data-target="popup-alma">
+                    <img class="w-full h-32 object-cover" src="https://placehold.co/400x200/34D399/FFFFFF?text=Alma+Park" alt="Alma Park">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-900">PARK: Alma Park</h3>
+                        <p class="text-sm text-gray-500 flex items-center mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                            1413 Sanborn Avenue
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-gray-200 flex justify-start items-center text-sm text-gray-500 space-x-5">
+                            <span class="flex items-center space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 20 20" fill="currentColor"><path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" /></svg>
+                                <span class="font-medium">1</span>
+                            </span>
+                            <span class="flex items-center space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"><path d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.106-1.79l-.05-.025A4 4 0 0011.057 2H5.642a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.867a4 4 0 00.8-2.4z" /></svg>
+                                <span class="font-medium">0</span>
+                            </span>
+                            <span class="flex items-center space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.08-3.239A8.98 8.98 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.416 14.532a7.023 7.023 0 001.545.811A6.972 6.972 0 0010 16c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6c0 .58.082 1.137.234 1.661l.245.813-1.255 3.766 3.767-1.255.813.245z" clip-rule="evenodd" /></svg>
+                                <span class="font-medium">1</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Refined Initiative Card 2 -->
+                 <div class="list-card bg-white rounded-lg shadow-sm overflow-hidden transition-shadow hover:shadow-md cursor-pointer" data-target="popup-doerr">
+                    <img class="w-full h-32 object-cover" src="https://placehold.co/400x200/60A5FA/FFFFFF?text=Doerr+Park" alt="Doerr Park">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-900">PARK: Doerr Park Renovation</h3>
+                         <p class="text-sm text-gray-500 flex items-center mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                            2455 Doerr Avenue
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-gray-200 flex justify-start items-center text-sm text-gray-500 space-x-5">
+                             <span class="flex items-center space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 20 20" fill="currentColor"><path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" /></svg>
+                                <span class="font-medium">12</span>
+                            </span>
+                            <span class="flex items-center space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"><path d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.106-1.79l-.05-.025A4 4 0 0011.057 2H5.642a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01-.8 2.4l1.4-1.867a4 4 0 00.8-2.4z" /></svg>
+                                <span class="font-medium">3</span>
+                            </span>
+                            <span class="flex items-center space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.08-3.239A8.98 8.98 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.416 14.532a7.023 7.023 0 001.545.811A6.972 6.972 0 0010 16c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6c0 .58.082 1.137.234 1.661l.245.813-1.255 3.766 3.767-1.255.813.245z" clip-rule="evenodd" /></svg>
+                                <span class="font-medium">5</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- ... other cards would follow ... -->
+            </div>
+
+            <!-- Right Column: Map -->
+            <div class="md:col-span-2 h-[60vh] md:h-[75vh] rounded-lg shadow-inner relative overflow-hidden">
+                <!-- Mock Map Image -->
+                <img src="https://images.unsplash.com/photo-1618638951557-6f5b00b7b15a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Map of San Jose area" class="w-full h-full object-cover opacity-80">
+
+                <!-- Refined Map Popup 1 (for Alma Park) -->
+                <div id="popup-alma" class="map-popup hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl w-72 overflow-hidden z-20">
+                    <button class="popup-close absolute top-2 right-2 text-gray-400 hover:text-gray-600 z-30">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <img class="w-full h-32 object-cover" src="https://placehold.co/300x150/34D399/FFFFFF?text=Alma+Park" alt="Alma Park">
+                    <div class="p-4">
+                        <p class="text-sm text-gray-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                            1413 Sanborn Avenue
+                        </p>
+                        <p class="text-xs text-gray-600 mt-2 line-clamp-2">Design and construction of a 0.33-acre park located at the southwest corner...</p>
+                        
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex space-x-4">
+                                <!-- Likes -->
+                                <span class="flex items-center space-x-1 text-gray-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 20 20" fill="currentColor"><path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" /></svg>
+                                    <span class="font-medium text-sm">1</span>
+                                </span>
+                                 <!-- Comments -->
+                                 <span class="flex items-center space-x-1 text-gray-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.08-3.239A8.98 8.98 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.416 14.532a7.023 7.023 0 001.545.811A6.972 6.972 0 0010 16c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6c0 .58.082 1.137.234 1.661l.245.813-1.255 3.766 3.767-1.255.813.245z" clip-rule="evenodd" /></svg>
+                                    <span class="font-medium text-sm">1</span>
+                                </span>
+                            </div>
+                            <!-- CTA -->
+                            <a href="#" class="px-3 py-2 bg-emerald-600 text-white text-sm font-medium rounded-md shadow-sm hover:bg-emerald-700">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Refined Map Popup 2 (for Doerr Park) -->
+                <div id="popup-doerr" class="map-popup hidden absolute top-1/3 left-1/4 bg-white rounded-lg shadow-xl w-72 overflow-hidden z-20">
+                    <button class="popup-close absolute top-2 right-2 text-gray-400 hover:text-gray-600 z-30">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <img class="w-full h-32 object-cover" src="https://placehold.co/300x150/60A5FA/FFFFFF?text=Doerr+Park" alt="Doerr Park">
+                    <div class="p-4">
+                        <p class="text-sm text-gray-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                            2455 Doerr Avenue
+                        </p>
+                        <p class="text-xs text-gray-600 mt-2 line-clamp-2">A renovation of the existing Doerr Park, including new play structures and picnic areas.</p>
+                        
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex space-x-4">
+                                <!-- Likes -->
+                                <span class="flex items-center space-x-1 text-gray-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 20 20" fill="currentColor"><path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" /></svg>
+                                    <span class="font-medium text-sm">12</span>
+                                </span>
+                                 <!-- Comments -->
+                                 <span class="flex items-center space-x-1 text-gray-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.08-3.239A8.98 8.98 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM4.416 14.532a7.023 7.023 0 001.545.811A6.972 6.972 0 0010 16c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6c0 .58.082 1.137.234 1.661l.245.813-1.255 3.766 3.767-1.255.813.245z" clip-rule="evenodd" /></svg>
+                                    <span class="font-medium text-sm">5</span>
+                                </span>
+                            </div>
+                            <!-- CTA -->
+                            <a href="#" class="px-3 py-2 bg-emerald-600 text-white text-sm font-medium rounded-md shadow-sm hover:bg-emerald-700">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const listCards = document.querySelectorAll('.list-card');
+            const popups = document.querySelectorAll('.map-popup');
+            const closeButtons = document.querySelectorAll('.popup-close');
+
+            // Function to hide all popups
+            function hideAllPopups() {
+                popups.forEach(popup => {
+                    popup.classList.add('hidden');
+                });
+            }
+
+            // Add click event to list cards
+            listCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Hide all popups first
+                    hideAllPopups();
+                    
+                    // Get the target popup ID from data attribute
+                    const targetPopupId = card.getAttribute('data-target');
+                    const targetPopup = document.getElementById(targetPopupId);
+                    
+                    // Show the target popup
+                    if (targetPopup) {
+                        targetPopup.classList.remove('hidden');
+                    }
+                });
+            });
+
+            // Add click event to close buttons
+            closeButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Stop click from propagating to the card
+                    hideAllPopups();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
