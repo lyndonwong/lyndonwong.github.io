@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iowa Cancer Policy Simulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Tooltip Styling */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip-container .tooltip-text {
+            visibility: hidden;
+            width: 250px;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.875rem;
+            font-weight: normal;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        .tooltip-container .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Custom Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #0ea5e9; /* Tailwind sky-500 */
+            cursor: pointer;
+            margin-top: -8px;
+            transition: background-color 0.2s;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 6px;
+            cursor: pointer;
+            background: #cbd5e1; /* Tailwind slate-300 */
+            border-radius: 3px;
+        }
+        input[type=range]:focus {
+            outline: none;
+        }
+        
+        /* Over-budget Slider Styling */
+        input[type=range].over-budget::-webkit-slider-thumb {
+            background: #ef4444; /* Tailwind red-500 */
+        }
+        input[type=range].over-budget::-webkit-slider-runnable-track {
+            background: #fca5a5; /* Tailwind red-300 */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen p-6">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200">
+        
+        <div class="bg-gradient-to-r from-emerald-600 to-blue-600 p-6 text-white">
+            <h1 class="text-3xl font-bold mb-2">Iowa Cancer Policy Simulator</h1>
+            <p class="text-emerald-100">Balance health initiatives against economic costs to maximize value for the state.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 bg-slate-100 border-b border-slate-200">
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex flex-col items-center justify-center">
+                <h2 class="text-lg font-semibold text-slate-600 uppercase tracking-wider">Budget Remaining</h2>
+                <div class="text-4xl font-bold mt-2 transition-colors duration-300" id="budget-display">
+                    $<span id="budget-amount">50</span>
+                </div>
+                <p class="text-sm text-slate-500 mt-1" id="budget-warning">Total capacity: $50</p>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex flex-col items-center justify-center">
+                <h2 class="text-lg font-semibold text-slate-600 uppercase tracking-wider">Total Economic Value</h2>
+                <div class="text-4xl font-bold mt-2 text-emerald-600 transition-colors duration-300">
+                    <span id="value-amount">0</span>
+                </div>
+                <p class="text-sm text-slate-500 mt-1">Goal: Maximize this score</p>
+            </div>
+        </div>
+
+        <div class="p-6" id="policies-container">
+            </div>
+
+        <div class="bg-slate-50 p-6 border-t border-slate-200 flex justify-between items-center">
+            <p class="text-sm text-slate-500">Adjust the intensity of each policy (0-10) to see the impact.</p>
+            <button onclick="downloadState()" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+                Download This Tool
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        // Data Setup: Policies with Cost and Economic Benefit
+        const MAX_BUDGET = 50;
+        
+        const policies = [
+            { id: 'cig-tax', name: 'Cigarette Tax', cost: 2, benefit: 8, value: 0, icon: '🚬', rationale: 'Increases price of tobacco to deter smoking, reducing long-term healthcare costs associated with lung cancer.' },
+            { id: 'pest-tax', name: 'Pesticide Tax', cost: 4, benefit: 7, value: 0, icon: '🧪', rationale: 'Incentivizes safer farming practices by taxing agricultural chemicals linked to water contamination and cancer.' },
+            { id: 'cov-crops', name: 'Cover Crops', cost: 5, benefit: 6, value: 0, icon: '🌱', rationale: 'Subsidizes farmers to plant cover crops, improving soil health and naturally filtering out agricultural carcinogens.' },
+            { id: 'radon', name: 'Radon Mitigation', cost: 3, benefit: 9, value: 0, icon: '🏠', rationale: 'Provides grants for home radon testing and mitigation systems to directly prevent lung cancer.' },
+            { id: 'water-filt', name: 'Water Filtration', cost: 8, benefit: 10, value: 0, icon: '💧', rationale: 'Upgrades municipal water treatment plants to remove nitrates and "forever chemicals" (PFAS).' },
+            { id: 'alc-tax', name: 'Alcohol Tax', cost: 2, benefit: 6, value: 0, icon: '🍺', rationale: 'Raises taxes on alcohol to decrease excessive consumption, which is linked to several types of cancer.' }
+        ];
+
+        // State variables
+        let currentBudgetSpent = 0;
+        let currentEconomicValue = 0;
+
+        // Initialize UI
+        function init() {
+            const container = document.getElementById('policies-container');
+            container.innerHTML = ''; // Clear container
+
+            policies.forEach((policy, index) => {
+                const policyHTML = `
+                    <div class="mb-6 bg-white p-4 rounded border border-slate-100 shadow-sm transition-all hover:shadow-md">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl">${policy.icon}</span>
+                                <h3 class="text-lg font-bold text-slate-800">${policy.name}</h3>
+                                
+                                <div class="tooltip-container ml-1 cursor-help">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-400 hover:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="tooltip-text">${policy.rationale}</span>
+                                </div>
+                            </div>
+                            <div class="text-sm font-semibold">
+                                <span class="text-red-500 mr-3">Cost Multiplier: ${policy.cost}</span>
+                                <span class="text-emerald-600">Benefit Multiplier: ${policy.benefit}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 mt-4">
+                            <span class="text-slate-500 font-medium w-8 text-right">0</span>
+                            <input type="range" min="0" max="10" value="${policy.value}" class="policy-slider" data-index="${index}">
+                            <span class="text-slate-500 font-medium w-8">10</span>
+                        </div>
+                        
+                        <div class="flex justify-between text-sm mt-2">
+                            <span class="text-slate-600">Current Level: <strong id="level-${index}">${policy.value}</strong></span>
+                            <span class="text-slate-600">Cost: $<strong id="cost-${index}">${policy.value * policy.cost}</strong> | Value: <strong id="val-${index}">${policy.value * policy.benefit}</strong></span>
+                        </div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', policyHTML);
+            });
+
+            // Add event listeners to sliders
+            document.querySelectorAll('.policy-slider').forEach(slider => {
+                slider.addEventListener('input', handleSliderChange);
+            });
+
+            updateDashboard();
+        }
+
+        // Handle slider movement
+        function handleSliderChange(e) {
+            const index = e.target.getAttribute('data-index');
+            const newValue = parseInt(e.target.value);
+            
+            policies[index].value = newValue;
+            updateDashboard();
+        }
+
+        // Calculate totals and update UI
+        function updateDashboard() {
+            currentBudgetSpent = 0;
+            currentEconomicValue = 0;
+
+            // Calculate totals
+            policies.forEach((policy, index) => {
+                const itemCost = policy.value * policy.cost;
+                const itemValue = policy.value * policy.benefit;
+                
+                currentBudgetSpent += itemCost;
+                currentEconomicValue += itemValue;
+
+                // Update individual policy text readouts
+                document.getElementById(`level-${index}`).innerText = policy.value;
+                document.getElementById(`cost-${index}`).innerText = itemCost;
+                document.getElementById(`val-${index}`).innerText = itemValue;
+            });
+
+            const remainingBudget = MAX_BUDGET - currentBudgetSpent;
+            
+            // Update Scorecard Elements
+            const budgetDisplay = document.getElementById('budget-display');
+            const budgetAmount = document.getElementById('budget-amount');
+            const valueAmount = document.getElementById('value-amount');
+            const warningText = document.getElementById('budget-warning');
+            const sliders = document.querySelectorAll('.policy-slider');
+
+            budgetAmount.innerText = remainingBudget;
+            valueAmount.innerText = currentEconomicValue;
+
+            // Handle Over-Budget State (The "Lock" / Red visual cue)
+            if (currentBudgetSpent > MAX_BUDGET) {
+                budgetDisplay.classList.remove('text-slate-800');
+                budgetDisplay.classList.add('text-red-600');
+                warningText.innerText = "OVER BUDGET! Reduce policy levels.";
+                warningText.classList.add('text-red-500');
+                
+                // Turn all sliders red
+                sliders.forEach(slider => slider.classList.add('over-budget'));
+            } else {
+                budgetDisplay.classList.remove('text-red-600');
+                budgetDisplay.classList.add('text-slate-800');
+                warningText.innerText = "Total capacity: $50";
+                warningText.classList.remove('text-red-500');
+                
+                // Return sliders to normal color
+                sliders.forEach(slider => slider.classList.remove('over-budget'));
+            }
+        }
+
+        // Download functionality
+        function downloadState() {
+            let content = "IOWA CANCER POLICY SIMULATOR - STUDENT SUBMISSION\n";
+            content += "===================================================\n\n";
+            
+            policies.forEach(p => {
+                content += `${p.name.toUpperCase()}:\n`;
+                content += `- Intensity Level: ${p.value} / 10\n`;
+                content += `- Budget Spent: $${p.value * p.cost}\n`;
+                content += `- Economic Value Generated: ${p.value * p.benefit}\n\n`;
+            });
+
+            content += "===================================================\n";
+            content += `TOTAL BUDGET SPENT: $${currentBudgetSpent} / $${MAX_BUDGET}\n`;
+            content += `TOTAL ECONOMIC VALUE: ${currentEconomicValue}\n`;
+            
+            if (currentBudgetSpent > MAX_BUDGET) {
+                content += `\nSTATUS: INVALID (OVER BUDGET BY $${currentBudgetSpent - MAX_BUDGET})\n`;
+            } else {
+                content += `\nSTATUS: VALID BUDGET\n`;
+            }
+
+            // Create Blob and trigger download
+            const blob = new Blob([content], { type: "text/plain" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            
+            // Format current date for filename
+            const dateStr = new Date().toISOString().split('T')[0];
+            
+            a.href = url;
+            a.download = `Policy_Simulation_${dateStr}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Boot up the app
+        init();
+    </script>
+</body>
+</html>
