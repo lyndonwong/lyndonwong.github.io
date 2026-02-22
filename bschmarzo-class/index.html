@@ -9,11 +9,9 @@
         .gradient-bg {
             background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
         }
-        .card {
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
+        .code-block {
+            background-color: #0f172a;
+            border-left: 4px solid #3b82f6;
         }
     </style>
 </head>
@@ -34,61 +32,71 @@
         
         <section class="mb-16">
             <h2 class="text-3xl font-bold mb-6 border-b-2 border-blue-500 inline-block">The Challenge</h2>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 italic">
                 <p class="text-lg leading-relaxed mb-4">
-                    Iowa currently faces a critical health crisis: it has the <strong>second-highest cancer incidence rate</strong> in the U.S. and is the only state where that rate is rising.
-                </p>
-                <p class="text-lg leading-relaxed">
-                    This exercise teaches students <strong>"Vibe Coding"</strong>—the art of using natural language and intent to direct an AI to build a complex, constrained optimization tool without manually writing code.
+                    "I want to create a simple interactive widget for my students... Cancer in Iowa is a major issue. Please research all credible sources about the cancer situation in Iowa and in similar states to help build this widget."
                 </p>
             </div>
         </section>
 
         <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-6">The Strategic Levers</h2>
-            <p class="mb-6 text-slate-600">Students must allocate a limited <strong>$50 budget</strong> across these six conflicting options to maximize long-term economic value.</p>
-            
-            <div class="overflow-x-auto rounded-xl shadow-md">
-                <table class="w-full text-left bg-white">
-                    <thead class="bg-slate-800 text-white">
-                        <tr>
-                            <th class="p-4">Policy Action</th>
-                            <th class="p-4">Economic Benefit (1-10)</th>
-                            <th class="p-4">Relative Cost</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200">
-                        <tr><td class="p-4 font-semibold">Cigarette Tax Increase</td><td class="p-4">8.5</td><td class="p-4">Low</td></tr>
-                        <tr><td class="p-4 font-semibold">Pesticide Use Restrictions</td><td class="p-4">6.0</td><td class="p-4">Medium</td></tr>
-                        <tr><td class="p-4 font-semibold">Cover Crop Subsidies</td><td class="p-4">7.5</td><td class="p-4">High</td></tr>
-                        <tr><td class="p-4 font-semibold">Radon Mitigation Grants</td><td class="p-4">9.0</td><td class="p-4">Medium</td></tr>
-                        <tr><td class="p-4 font-semibold">Ethanol Plant Regulation</td><td class="p-4">5.5</td><td class="p-4">High</td></tr>
-                        <tr><td class="p-4 font-semibold">Mobile Rural Screenings</td><td class="p-4">8.0</td><td class="p-4">Medium</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="mb-16">
-            <div class="bg-slate-900 rounded-2xl p-8 text-white relative">
-                <h2 class="text-2xl font-bold mb-4 text-blue-400">The "Mega-Prompt"</h2>
-                <p class="text-slate-400 mb-6">Copy the text below into an LLM (Gemini, Claude, or ChatGPT) to regenerate this tool from scratch:</p>
-                
-                <div class="bg-slate-800 p-6 rounded-lg font-mono text-sm text-slate-300 border border-slate-700 leading-relaxed italic">
-                    "Act as a Lead Web Developer. Create a single, self-contained HTML file for an 'Iowa Cancer Policy Simulator.' <br><br>
-                    <strong>The Setup:</strong> Six sliders (Cigarettes, Pesticides, Cover Crops, Radon, Ethanol, Screenings). <br>
-                    <strong>The Logic:</strong> $50 total budget. Each slider has a specific cost. If spend > $50, show a warning. Update an 'Economic Benefit Score' in real-time. <br>
-                    <strong>The Style:</strong> Clean, mobile-responsive, and modern UI. Include a 'Download Results' button."
+            <h2 class="text-3xl font-bold mb-6">The Six Strategic Levers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-blue-600 mb-2">1. Cigarette Tax</h3>
+                    <p class="text-sm text-slate-600">High impact on lung cancer; generates immediate state revenue.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-blue-600 mb-2">2. Pesticide Tax</h3>
+                    <p class="text-sm text-slate-600">Targets chemical runoff; affects agricultural production costs.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-blue-600 mb-2">3. Cover Crop Subsidies</h3>
+                    <p class="text-sm text-slate-600">Reduces nitrate runoff in water; high upfront cost for farmers.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-blue-600 mb-2">4. Radon Mitigation</h3>
+                    <p class="text-sm text-slate-600">Iowa has high natural radon levels; requires home-by-home fixes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-blue-600 mb-2">5. Ethanol Regulation</h3>
+                    <p class="text-sm text-slate-600">Addresses industrial emissions; high economic friction.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-blue-600 mb-2">6. Rural Mobile Screenings</h3>
+                    <p class="text-sm text-slate-600">Increases early detection in healthcare-sparse rural areas.</p>
                 </div>
             </div>
         </section>
 
-        <section class="text-center py-12 border-t border-slate-200">
-            <h3 class="text-2xl font-bold mb-4">Ready to test the logic?</h3>
-            <a href="https://lyndonwong.com/bschmarzo-class/simulator-v1.html" class="text-blue-600 font-bold hover:underline text-lg">
-                View the Simulator Demo &rarr;
-            </a>
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">The Master Prompt</h2>
+            <p class="mb-4 text-slate-600">Copy and paste the exact text below into your LLM to generate the simulator:</p>
+            
+            <div class="code-block p-8 rounded-2xl text-slate-200 font-mono text-sm leading-relaxed shadow-inner overflow-x-auto">
+                <p class="mb-4">Act as a Lead Web Developer. Create a single, self-contained HTML file that includes CSS and JavaScript. This file should be an interactive 'Iowa Cancer Policy Simulator.'</p>
+                
+                <p class="mb-4"><strong>The UI:</strong><br>
+                - A clean, modern dashboard with a 'Remaining Budget' counter starting at $50.00.<br>
+                - Six sliders representing: 1. Cigarette Taxes, 2. Pesticide Taxes, 3. Cover Crop Subsidies, 4. Radon Mitigation, 5. Ethanol Regulation, 6. Rural Mobile Screening.<br>
+                - A 'Total Economic Value' meter that updates in real-time.</p>
+                
+                <p class="mb-4"><strong>The Logic:</strong><br>
+                - Each slider should have an assigned 'Cost per Unit' and an 'Economic Benefit Multiplier' (based on a 1-10 scale).<br>
+                - If the user tries to spend more than $50, the sliders should lock or show a warning.<br>
+                - Provide a 'Download Report' button that lets the student save their configuration as a text file.</p>
+                
+                <p><strong>The Output:</strong><br>
+                - Deliver the response as a single, complete block of HTML code that I can save as an .html file and run in any browser. Ensure it is mobile-responsive using a simple CSS framework like Pico.css or Tailwind via CDN.</p>
+            </div>
         </section>
+
+        <div class="text-center py-12 border-t border-slate-200">
+            <h3 class="text-2xl font-bold mb-6">Ready to see the result?</h3>
+            <a href="https://lyndonwong.com/bschmarzo-class/simulator-v1.html" class="bg-slate-900 text-white px-8 py-3 rounded-lg hover:bg-slate-700 transition">
+                Go to Simulator &rarr;
+            </a>
+        </div>
 
     </main>
 
