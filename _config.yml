@@ -1,0 +1,67 @@
+# Theme
+remote_theme: mmistakes/minimal-mistakes@4.26.2
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Site settings
+title: "Jekyll stuff"
+name: "Lyndon Wong"
+description: "Testing Jekyll themes and layouts."
+url: "https://lyndonwong.com"
+baseurl: "/jekyll-lab"
+
+# Site masthead
+logo: "/assets/images/LWA-v2-square.png"
+masthead_title: "el double you ayy"
+
+# Author (populates the sidebar bio card)
+author:
+  name: "Lyndon Wong"
+  avatar: "/assets/images/Lyndon-headshot.jpg"
+  bio: "Growth / Demand marketing practitioner exploring AI across the customer journey."
+  location: "Bay Area, CA"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/lyndonwong/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/lyndonwong"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://www.instagram.com/lyndonian"
+    - label: "Blog"
+      icon: "fab fa-fw fa-wordpress"
+      url: "https://lyndonwong.wordpress.com"
+
+
+# Navigation menu
+navigation:
+  - title: "Home"
+    url: /jekyll-lab/
+  - title: "Blog"
+    url: https://lyndonwong.wordpress.com
+
+# Front Matter Defaults
+defaults:
+  # Settings for Pages
+  - scope:
+      path: ""          # an empty string here means all files in the project
+      type: "pages"
+    values:
+      layout: "single"
+      author_profile: true
+
+  # Settings for Blog Posts
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
