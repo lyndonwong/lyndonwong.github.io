@@ -10,10 +10,6 @@ header:
 
 ## Welcome!
 
-I tinker here with various digital technologies that can improve customer acquisition, conversion and retention. As time permits, I will profile some of this work and share relevant links below. 
+I tinker here with various digital technologies that can improve customer acquisition, conversion and retention. 
 
-* 🤖 
-* 🏡 
-* 🧑‍🧑‍🧒‍🧒
-
-Please connect on my socials or check out my [Blog](https://lyndonwong.wordpress.com/ "Lyndon's Wordpress blog").
+Please connect on my socials or check out my [blog](https://lyndonwong.wordpress.com/ "Lyndon's Wordpress blog").
