@@ -10,7 +10,7 @@ title: "Jekyll stuff"
 name: "Lyndon Wong"
 description: "Testing Jekyll themes and layouts."
 url: "https://lyndonwong.com"
-baseurl: "/jekyll-lab"
+baseurl: ""
 
 # Site masthead
 logo: "/assets/images/LWA-v2-square.png"
