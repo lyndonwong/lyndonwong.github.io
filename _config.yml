@@ -7,10 +7,10 @@ plugins:
 
 # Site settings
 title: "Lyndon Wong"
-name: "Lyndon Wong"
-description: "Personal homepage"
+name: "Homepage"
+description: "My online sandbox"
 url: "https://lyndonwong.com"
-baseurl: "/jekyll-lab"
+baseurl: ""
 
 # Site masthead
 logo: "/assets/images/LWA-v2-square.png"
