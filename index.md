@@ -10,9 +10,9 @@ header:
 
 ## Welcome!
 
-I tinker here with various digital technologies. Here's some recent efforts.
+I tinker here with various digital technologies. Some recent efforts:
 
-### An AI-enabled recap of local city council activity
+### AI-enabled recap of local city council activity
 
 * Problem: How to quickly catch up on a half-year of local government actions
 * Solution: Leverage LLMs to summarize key themes and extract relevant details. Use Streamlit to present these in a visually concise manner.
@@ -24,8 +24,8 @@ I tinker here with various digital technologies. Here's some recent efforts.
 * * * 
 
 ### AI Video Reels from Blog posts
-* Problem: How can a team of writers turn blog content into social media reels?
-* Solution: Blend practices from film-making and LLM prompt engineering to produce good results
+* Problem: How can a team of writers with no video skills turn blog content into social media reels?
+* Solution: Blend practices from film-making and LLM prompt engineering to produce reliable results with current AI tools.
 
 ##### [AI video production workflow](https://lyndonwong.wordpress.com/2026/03/10/using-ai-to-turn-blog-posts-into-video-reels-for-social-channels/)
 [![AI applied at 3 key video production phases](/assets/images/AI_Reels_reality_2026.png)](https://lyndonwong.wordpress.com/2026/03/10/using-ai-to-turn-blog-posts-into-video-reels-for-social-channels/)
